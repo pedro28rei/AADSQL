@@ -21,9 +21,9 @@
         }
 
         #region Atributos
-        System.Windows.Forms.Button InserirDadosButton;
-        System.Windows.Forms.Button MostrarDadosButton;
-        System.Windows.Forms.DataGridView dataGridDados;
+        System.Windows.Forms.Button InserirClienteBotao;
+        System.Windows.Forms.Button MostrarTabelaBotao;
+        System.Windows.Forms.DataGridView DataGridDados;
         #endregion
 
         #region Windows Form Designer generated code
@@ -34,9 +34,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.InserirDadosButton = new System.Windows.Forms.Button();
-            this.MostrarDadosButton = new System.Windows.Forms.Button();
-            this.dataGridDados = new System.Windows.Forms.DataGridView();
+            this.InserirClienteBotao = new System.Windows.Forms.Button();
+            this.MostrarTabelaBotao = new System.Windows.Forms.Button();
+            this.DataGridDados = new System.Windows.Forms.DataGridView();
             this.NomeTabela = new System.Windows.Forms.TextBox();
             this.Nome = new System.Windows.Forms.TextBox();
             this.NIFADD = new System.Windows.Forms.TextBox();
@@ -44,71 +44,83 @@
             this.CNome = new System.Windows.Forms.Label();
             this.CNIF = new System.Windows.Forms.Label();
             this.CDataNasc = new System.Windows.Forms.Label();
-            this.RemoverButton = new System.Windows.Forms.Button();
+            this.RemoverClienteBotao = new System.Windows.Forms.Button();
             this.NIFREMOVE = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridDados)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
+            this.InserirClienteContactoBotao = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.DataNascC = new System.Windows.Forms.TextBox();
+            this.NIFC = new System.Windows.Forms.TextBox();
+            this.NomeC = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.DescContacto = new System.Windows.Forms.TextBox();
+            this.ContactoTipo = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridDados)).BeginInit();
             this.SuspendLayout();
             // 
-            // InserirDadosButton
+            // InserirClienteBotao
             // 
-            this.InserirDadosButton.Location = new System.Drawing.Point(33, 87);
-            this.InserirDadosButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.InserirDadosButton.Name = "InserirDadosButton";
-            this.InserirDadosButton.Size = new System.Drawing.Size(139, 49);
-            this.InserirDadosButton.TabIndex = 0;
-            this.InserirDadosButton.Text = "Inserir";
-            this.InserirDadosButton.UseVisualStyleBackColor = true;
-            this.InserirDadosButton.Click += new System.EventHandler(this.InserirDadosButton_Click);
+            this.InserirClienteBotao.Location = new System.Drawing.Point(9, 57);
+            this.InserirClienteBotao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.InserirClienteBotao.Name = "InserirClienteBotao";
+            this.InserirClienteBotao.Size = new System.Drawing.Size(139, 49);
+            this.InserirClienteBotao.TabIndex = 0;
+            this.InserirClienteBotao.Text = "Inserir Cliente";
+            this.InserirClienteBotao.UseVisualStyleBackColor = true;
+            this.InserirClienteBotao.Click += new System.EventHandler(this.InserirDadosButton_Click);
             // 
-            // MostrarDadosButton
+            // MostrarTabelaBotao
             // 
-            this.MostrarDadosButton.Location = new System.Drawing.Point(33, 231);
-            this.MostrarDadosButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MostrarDadosButton.Name = "MostrarDadosButton";
-            this.MostrarDadosButton.Size = new System.Drawing.Size(139, 49);
-            this.MostrarDadosButton.TabIndex = 1;
-            this.MostrarDadosButton.Text = "Mostrar";
-            this.MostrarDadosButton.UseVisualStyleBackColor = true;
-            this.MostrarDadosButton.Click += new System.EventHandler(this.MostrarDadosButton_Click);
+            this.MostrarTabelaBotao.Location = new System.Drawing.Point(9, 339);
+            this.MostrarTabelaBotao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MostrarTabelaBotao.Name = "MostrarTabelaBotao";
+            this.MostrarTabelaBotao.Size = new System.Drawing.Size(139, 49);
+            this.MostrarTabelaBotao.TabIndex = 1;
+            this.MostrarTabelaBotao.Text = "Mostrar";
+            this.MostrarTabelaBotao.UseVisualStyleBackColor = true;
+            this.MostrarTabelaBotao.Click += new System.EventHandler(this.MostrarDadosButton_Click);
             // 
-            // dataGridDados
+            // DataGridDados
             // 
-            this.dataGridDados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridDados.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridDados.Location = new System.Drawing.Point(83, 318);
-            this.dataGridDados.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dataGridDados.Name = "dataGridDados";
-            this.dataGridDados.RowHeadersWidth = 51;
-            this.dataGridDados.RowTemplate.Height = 24;
-            this.dataGridDados.Size = new System.Drawing.Size(1027, 191);
-            this.dataGridDados.TabIndex = 2;
+            this.DataGridDados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DataGridDados.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DataGridDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridDados.Location = new System.Drawing.Point(83, 396);
+            this.DataGridDados.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.DataGridDados.Name = "DataGridDados";
+            this.DataGridDados.RowHeadersWidth = 51;
+            this.DataGridDados.RowTemplate.Height = 24;
+            this.DataGridDados.Size = new System.Drawing.Size(1027, 191);
+            this.DataGridDados.TabIndex = 2;
             // 
             // NomeTabela
             // 
-            this.NomeTabela.Location = new System.Drawing.Point(267, 254);
+            this.NomeTabela.Location = new System.Drawing.Point(243, 350);
             this.NomeTabela.Name = "NomeTabela";
             this.NomeTabela.Size = new System.Drawing.Size(362, 26);
             this.NomeTabela.TabIndex = 3;
             // 
             // Nome
             // 
-            this.Nome.Location = new System.Drawing.Point(267, 42);
+            this.Nome.Location = new System.Drawing.Point(243, 12);
             this.Nome.Name = "Nome";
             this.Nome.Size = new System.Drawing.Size(362, 26);
             this.Nome.TabIndex = 4;
             // 
             // NIFADD
             // 
-            this.NIFADD.Location = new System.Drawing.Point(267, 95);
+            this.NIFADD.Location = new System.Drawing.Point(243, 65);
             this.NIFADD.Name = "NIFADD";
             this.NIFADD.Size = new System.Drawing.Size(362, 26);
             this.NIFADD.TabIndex = 5;
             // 
             // DataNasc
             // 
-            this.DataNasc.Location = new System.Drawing.Point(267, 145);
+            this.DataNasc.Location = new System.Drawing.Point(243, 115);
             this.DataNasc.Name = "DataNasc";
             this.DataNasc.Size = new System.Drawing.Size(362, 26);
             this.DataNasc.TabIndex = 6;
@@ -116,7 +128,7 @@
             // CNome
             // 
             this.CNome.AutoSize = true;
-            this.CNome.Location = new System.Drawing.Point(210, 45);
+            this.CNome.Location = new System.Drawing.Point(186, 15);
             this.CNome.Name = "CNome";
             this.CNome.Size = new System.Drawing.Size(51, 20);
             this.CNome.TabIndex = 7;
@@ -125,7 +137,7 @@
             // CNIF
             // 
             this.CNIF.AutoSize = true;
-            this.CNIF.Location = new System.Drawing.Point(210, 101);
+            this.CNIF.Location = new System.Drawing.Point(186, 71);
             this.CNIF.Name = "CNIF";
             this.CNIF.Size = new System.Drawing.Size(35, 20);
             this.CNIF.TabIndex = 8;
@@ -134,25 +146,25 @@
             // CDataNasc
             // 
             this.CDataNasc.AutoSize = true;
-            this.CDataNasc.Location = new System.Drawing.Point(173, 151);
+            this.CDataNasc.Location = new System.Drawing.Point(149, 121);
             this.CDataNasc.Name = "CDataNasc";
             this.CDataNasc.Size = new System.Drawing.Size(88, 20);
             this.CDataNasc.TabIndex = 9;
             this.CDataNasc.Text = "Data Nasc.";
             // 
-            // RemoverButton
+            // RemoverClienteBotao
             // 
-            this.RemoverButton.Location = new System.Drawing.Point(682, 87);
-            this.RemoverButton.Name = "RemoverButton";
-            this.RemoverButton.Size = new System.Drawing.Size(139, 49);
-            this.RemoverButton.TabIndex = 10;
-            this.RemoverButton.Text = "Remover";
-            this.RemoverButton.UseVisualStyleBackColor = true;
-            this.RemoverButton.Click += new System.EventHandler(this.RemoverButton_Click);
+            this.RemoverClienteBotao.Location = new System.Drawing.Point(670, 54);
+            this.RemoverClienteBotao.Name = "RemoverClienteBotao";
+            this.RemoverClienteBotao.Size = new System.Drawing.Size(139, 49);
+            this.RemoverClienteBotao.TabIndex = 10;
+            this.RemoverClienteBotao.Text = "Remover";
+            this.RemoverClienteBotao.UseVisualStyleBackColor = true;
+            this.RemoverClienteBotao.Click += new System.EventHandler(this.RemoverButton_Click);
             // 
             // NIFREMOVE
             // 
-            this.NIFREMOVE.Location = new System.Drawing.Point(873, 98);
+            this.NIFREMOVE.Location = new System.Drawing.Point(861, 65);
             this.NIFREMOVE.Name = "NIFREMOVE";
             this.NIFREMOVE.Size = new System.Drawing.Size(237, 26);
             this.NIFREMOVE.TabIndex = 11;
@@ -160,20 +172,131 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(827, 101);
+            this.label1.Location = new System.Drawing.Point(815, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 20);
             this.label1.TabIndex = 12;
             this.label1.Text = "NIF";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // InserirClienteContactoBotao
+            // 
+            this.InserirClienteContactoBotao.Location = new System.Drawing.Point(12, 211);
+            this.InserirClienteContactoBotao.Name = "InserirClienteContactoBotao";
+            this.InserirClienteContactoBotao.Size = new System.Drawing.Size(149, 63);
+            this.InserirClienteContactoBotao.TabIndex = 14;
+            this.InserirClienteContactoBotao.Text = "Inserir Cliente e Contacto";
+            this.InserirClienteContactoBotao.UseVisualStyleBackColor = true;
+            this.InserirClienteContactoBotao.Click += new System.EventHandler(this.InserirClienteContactoButton_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(149, 285);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 20);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Data Nasc.";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(186, 235);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 20);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "NIF";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(186, 179);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 20);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Nome";
+            // 
+            // DataNascC
+            // 
+            this.DataNascC.Location = new System.Drawing.Point(243, 279);
+            this.DataNascC.Name = "DataNascC";
+            this.DataNascC.Size = new System.Drawing.Size(362, 26);
+            this.DataNascC.TabIndex = 17;
+            // 
+            // NIFC
+            // 
+            this.NIFC.Location = new System.Drawing.Point(243, 229);
+            this.NIFC.Name = "NIFC";
+            this.NIFC.Size = new System.Drawing.Size(362, 26);
+            this.NIFC.TabIndex = 16;
+            // 
+            // NomeC
+            // 
+            this.NomeC.Location = new System.Drawing.Point(243, 176);
+            this.NomeC.Name = "NomeC";
+            this.NomeC.Size = new System.Drawing.Size(362, 26);
+            this.NomeC.TabIndex = 15;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(611, 261);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(119, 20);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Desc. Contacto";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(622, 208);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(108, 20);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "Tipo Contacto";
+            // 
+            // DescContacto
+            // 
+            this.DescContacto.Location = new System.Drawing.Point(736, 258);
+            this.DescContacto.Name = "DescContacto";
+            this.DescContacto.Size = new System.Drawing.Size(362, 26);
+            this.DescContacto.TabIndex = 22;
+            // 
+            // ContactoTipo
+            // 
+            this.ContactoTipo.Location = new System.Drawing.Point(736, 205);
+            this.ContactoTipo.Name = "ContactoTipo";
+            this.ContactoTipo.Size = new System.Drawing.Size(362, 26);
+            this.ContactoTipo.TabIndex = 21;
+            // 
             // Interface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1122, 562);
+            this.ClientSize = new System.Drawing.Size(1166, 618);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.DescContacto);
+            this.Controls.Add(this.ContactoTipo);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.DataNascC);
+            this.Controls.Add(this.NIFC);
+            this.Controls.Add(this.NomeC);
+            this.Controls.Add(this.InserirClienteContactoBotao);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.NIFREMOVE);
-            this.Controls.Add(this.RemoverButton);
+            this.Controls.Add(this.RemoverClienteBotao);
             this.Controls.Add(this.CDataNasc);
             this.Controls.Add(this.CNIF);
             this.Controls.Add(this.CNome);
@@ -181,13 +304,13 @@
             this.Controls.Add(this.NIFADD);
             this.Controls.Add(this.Nome);
             this.Controls.Add(this.NomeTabela);
-            this.Controls.Add(this.dataGridDados);
-            this.Controls.Add(this.MostrarDadosButton);
-            this.Controls.Add(this.InserirDadosButton);
+            this.Controls.Add(this.DataGridDados);
+            this.Controls.Add(this.MostrarTabelaBotao);
+            this.Controls.Add(this.InserirClienteBotao);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Interface";
             this.Text = "InterfaceAAD";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridDados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,9 +325,21 @@
         private System.Windows.Forms.Label CNome;
         private System.Windows.Forms.Label CNIF;
         private System.Windows.Forms.Label CDataNasc;
-        private System.Windows.Forms.Button RemoverButton;
+        private System.Windows.Forms.Button RemoverClienteBotao;
         private System.Windows.Forms.TextBox NIFREMOVE;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button InserirClienteContactoBotao;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox DataNascC;
+        private System.Windows.Forms.TextBox NIFC;
+        private System.Windows.Forms.TextBox NomeC;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox DescContacto;
+        private System.Windows.Forms.TextBox ContactoTipo;
     }
 }
 

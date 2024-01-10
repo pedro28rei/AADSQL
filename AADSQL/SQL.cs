@@ -71,10 +71,10 @@ namespace AADSQL
 
         #region OUTROS METODOS
         /// <summary>
-        /// Conexão à base de dados
+        /// Abre a conexao com a base de dados
         /// </summary>
         /// <returns></returns>
-        public bool Conectar()
+        public bool AbrirConexao()
         {
             try
             {
@@ -87,21 +87,37 @@ namespace AADSQL
             }
         }
         /// <summary>
-        /// Fechar conexão à base de dados
+        /// Fecha a conexao com a base de dados
         /// </summary>
         public void FecharConexao()
         {
             baseDeDados.Close();
         }
 
-    /// <summary>
-    /// Insere dados à tabela clientes
-    /// </summary>
-    /// <param name="nome"></param>
-    /// <param name="nif"></param>
-    /// <param name="dataNasc"></param>
-    /// <returns></returns>
-        public bool InsereDados(string nome, string nif,string dataNasc)
+
+        /*
+         * Assim teriamos espaço para alterar dados
+         * Assim teriamos espaço para alterar dados
+         * Deveriamos remover este metodo, ja que temos adicionar cliente e contacto
+         * Deveriamos remover este metodo, ja que temos adicionar cliente e contacto
+         * Deveriamos remover este metodo, ja que temos adicionar cliente e contacto
+         * Deveriamos remover este metodo, ja que temos adicionar cliente e contacto
+         * Deveriamos remover este metodo, ja que temos adicionar cliente e contacto
+         * Deveriamos remover este metodo, ja que temos adicionar cliente e contacto
+         * Assim teriamos espaço para alterar dados
+         * Assim teriamos espaço para alterar dados
+         */
+
+
+
+        /// <summary>
+        /// Insere dados à tabela Cliente
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <param name="nif"></param>
+        /// <param name="dataNasc"></param>
+        /// <returns></returns>
+        public bool InsereDadosCliente(string nome, string nif,string dataNasc)
         {
             string comando = string.Format("insert into Cliente(Cnome,CNIF,CDataNasc) values('{0}',{1},'{2}');",nome,nif,dataNasc);
             using (SqlCommand checkCommand = new SqlCommand($"SELECT COUNT(*) FROM Cliente WHERE CNIF = {nif}", baseDeDados))
@@ -126,13 +142,55 @@ namespace AADSQL
             return false;
         }
         /// <summary>
-        /// Remove um Cliente atravez do nif
+        /// Executa a stored procedure AdicionarClienteEContactos, recebendo como parametros o nome,nif,data de nascimento,tipo de contacto e descrição do contacto
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <param name="nif"></param>
+        /// <param name="dataNasc"></param>
+        /// <param name="tipoContacto"></param>
+        /// <param name="descContacto"></param>
+        /// <returns></returns>
+        public bool InsereDadosClienteContacto(string nome, string nif, string dataNasc, string tipoContacto, string descContacto)
+        {
+            string storedProcedure = string.Format("AdicionarClienteEContactos");
+            using (SqlCommand checkCommand = new SqlCommand($"SELECT COUNT(*) FROM Cliente WHERE CNIF = {nif}", baseDeDados))
+            {
+                try
+                {
+                    int count = (int)checkCommand.ExecuteScalar();
+
+                    if (count == 0)
+                    {
+                        using (var command = new SqlCommand(storedProcedure, baseDeDados){ CommandType = CommandType.StoredProcedure })
+                        {
+                            command.Parameters.Add(new SqlParameter("@Cnome", nome));
+                            command.Parameters.Add(new SqlParameter("CNIF", nif));
+                            command.Parameters.Add(new SqlParameter("@CDataNasc", dataNasc));
+                            command.Parameters.Add(new SqlParameter("@CCDados", descContacto));
+                            command.Parameters.Add(new SqlParameter("@DescricaoTC", tipoContacto));
+                            command.ExecuteNonQuery();
+                        }
+
+                    }
+                    return true;
+                }
+                catch (SqlException)
+                {
+                }
+            }
+            return false;
+        }
+
+
+
+        /// <summary>
+        /// Remove um Cliente atraves do seu nif
         /// </summary>
         /// <param name="nif"></param>
         /// <returns></returns>
         public bool RemoverCliente(string nif)
         {
-            string comando = string.Format("DELETE FROM Cliente WHERE CNIF = {0};",nif);
+            string comando = string.Format($"DECLARE @ClientId INT SELECT @ClientId = CID FROM Cliente WHERE CNIF = {nif} DELETE FROM ContactoCliente WHERE CID = @ClientId DELETE FROM Cliente WHERE CNIF = {nif};");
             using (SqlCommand checkCommand = new SqlCommand($"SELECT COUNT(*) FROM Cliente WHERE CNIF = {nif}", baseDeDados))
             {
                 try
@@ -157,10 +215,10 @@ namespace AADSQL
 
 
         /// <summary>
-        /// Dado nome de uma tabela mostra todos os dados
+        /// Recebendo uma string, mostra os dados de uma tabela
         /// </summary>
         /// <param name="dadosMostrar"></param>
-        public DataGridView MostrarDados(string dadosMostrar, DataGridView auxDataGrid)
+        public DataGridView MostrarTabela(string dadosMostrar, DataGridView auxDataGrid)
         {
             if (dadosMostrar == string.Empty) return null;
             SqlCommand mostraDados = new SqlCommand($"Select * from {dadosMostrar};", baseDeDados);
