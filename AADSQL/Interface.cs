@@ -81,5 +81,11 @@ namespace AADSQL
             string dataNasc = AltDataNasc.Text;
             baseDados.AlterarCliente(id,nome,nif,dataNasc);
         }
+
+        private void MostrarNumContact_Click(object sender, EventArgs e)
+        {
+            DataGridDados.DataSource = null;
+            baseDados.MostrarNumContacto(DataGridDados);
+        }
     }
 }

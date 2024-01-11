@@ -95,21 +95,6 @@ namespace AADSQL
         }
 
 
-        /*
-         * Assim teriamos espaço para alterar dados
-         * Assim teriamos espaço para alterar dados
-         * Deveriamos remover este metodo, ja que temos adicionar cliente e contacto
-         * Deveriamos remover este metodo, ja que temos adicionar cliente e contacto
-         * Deveriamos remover este metodo, ja que temos adicionar cliente e contacto
-         * Deveriamos remover este metodo, ja que temos adicionar cliente e contacto
-         * Deveriamos remover este metodo, ja que temos adicionar cliente e contacto
-         * Deveriamos remover este metodo, ja que temos adicionar cliente e contacto
-         * Assim teriamos espaço para alterar dados
-         * Assim teriamos espaço para alterar dados
-         */
-
-
-
         /// <summary>
         /// Executa a stored procedure AdicionarClienteEContactos, recebendo como parametros o nome,nif,data de nascimento,tipo de contacto e descrição do contacto
         /// </summary>
@@ -186,6 +171,31 @@ namespace AADSQL
                 }
             }
             return false;
+        }
+        /// <summary>
+        /// Metodo que executa uma query que conta o num de contactos por cliente e tipo
+        /// </summary>
+        /// <param name="auxDataGrid"></param>
+        /// <returns></returns>
+        public DataGridView MostrarNumContacto(DataGridView auxDataGrid)
+        {
+            SqlCommand mostraDados = new SqlCommand("Select Cliente.CID,CNome, DescricaoTC, Count(CCDados) as NDados\r\nFrom Cliente\r\nJoin ContactoCliente on Cliente.Cid = ContactoCliente.CID\r\nJoin TipoContacto on ContactoCliente.TCID = TipoContacto.TCID\r\nGroup by Cliente.CID, CNome, DescricaoTC;", baseDeDados);
+
+            var adaptadorDados = new SqlDataAdapter(mostraDados);
+            var auxDataSet = new DataSet();
+
+            adaptadorDados.Fill(auxDataSet);
+
+            if (auxDataSet.Tables.Count > 0)
+            {
+                auxDataGrid.DataSource = auxDataSet.Tables[0];
+                auxDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                auxDataGrid.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            }
+            else
+                auxDataGrid = null;
+
+            return auxDataGrid;
         }
 
         /// <summary>

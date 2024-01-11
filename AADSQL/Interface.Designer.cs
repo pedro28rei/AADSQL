@@ -212,12 +212,13 @@
             // 
             // MostrarNumContact
             // 
-            this.MostrarNumContact.Location = new System.Drawing.Point(654, 339);
+            this.MostrarNumContact.Location = new System.Drawing.Point(801, 339);
             this.MostrarNumContact.Name = "MostrarNumContact";
             this.MostrarNumContact.Size = new System.Drawing.Size(260, 49);
             this.MostrarNumContact.TabIndex = 26;
-            this.MostrarNumContact.Text = "Mostrar nº contactos por cliente";
+            this.MostrarNumContact.Text = "Mostrar nº contactos por cliente e tipo\r\n";
             this.MostrarNumContact.UseVisualStyleBackColor = true;
+            this.MostrarNumContact.Click += new System.EventHandler(this.MostrarNumContact_Click);
             // 
             // AlterarCliente
             // 
