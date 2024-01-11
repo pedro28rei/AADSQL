@@ -22,5 +22,36 @@ Begin
 	   SET @TipoContactoId = SCOPE_IDENTITY();
 	END;
 
-	insert into ContactoCliente(CID,TCID,CCDados) values(@ClientId,@TipoContactoID,@DescricaoTC)
+	insert into ContactoCliente(CID,TCID,CCDados) values(@ClientId,@TipoContactoID,@CCDados)
+END;
+
+CREATE PROCEDURE AlterarCliente @CID int ,@Cnome nvarchar(255), @CNIF integer, @CDataNasc date
+AS
+Begin
+
+
+	if @cid in (select cid from Cliente)
+	BEGIN
+        IF @Cnome <> ''
+        BEGIN
+            UPDATE Cliente
+            SET Cnome = @Cnome
+            WHERE CID = @CID;
+        END;
+
+		IF @CDataNasc <> ''
+		BEGIN
+		    UPDATE Cliente
+            SET CDataNasc = @CDataNasc
+            WHERE CID = @CID;
+		END;
+		IF @CNIF <> 0 and @CNIF not in (select CNIF from Cliente)
+		BEGIN
+			UPDATE Cliente
+            SET CNIF = @CNIF
+            WHERE CID = @CID;
+		END;
+
+	END;
+
 END;

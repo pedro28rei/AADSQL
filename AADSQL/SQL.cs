@@ -149,8 +149,44 @@ namespace AADSQL
             }
             return false;
         }
+        /// <summary>
+        /// Metodo que altera dados do cliente
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nome"></param>
+        /// <param name="nif"></param>
+        /// <param name="dataNasc"></param>
+        /// <returns></returns>
+        public bool AlterarCliente(string id, string nome,string nif,string dataNasc)
+        {
 
+            string storedProcedure = string.Format("AlterarCliente");
+            using (SqlCommand checkCommand = new SqlCommand($"SELECT COUNT(*) FROM Cliente WHERE CID = {id}", baseDeDados))
+            {
+                try
+                {
+                    int count = (int)checkCommand.ExecuteScalar();
 
+                    if (count > 0)
+                    {
+                        using (var command = new SqlCommand(storedProcedure, baseDeDados) { CommandType = CommandType.StoredProcedure })
+                        {
+                            command.Parameters.Add(new SqlParameter("@CID", id));
+                            command.Parameters.Add(new SqlParameter("@Cnome", nome));
+                            command.Parameters.Add(new SqlParameter("CNIF", nif));
+                            command.Parameters.Add(new SqlParameter("@CDataNasc", dataNasc));
+                            command.ExecuteNonQuery();
+                        }
+
+                    }
+                    return true;
+                }
+                catch (SqlException)
+                {
+                }
+            }
+            return false;
+        }
 
         /// <summary>
         /// Remove um Cliente atraves do seu nif

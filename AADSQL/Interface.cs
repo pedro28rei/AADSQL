@@ -73,5 +73,13 @@ namespace AADSQL
             baseDados.InsereDadosClienteContacto(nome,nif,dataNasc,tipoContacto,descContacto);
         }
 
+        private void AlterarCliente_Click(object sender, EventArgs e)
+        {
+            string id = AltID.Text;
+            string nome = AltNome.Text;
+            string nif = AltNIF.Text;
+            string dataNasc = AltDataNasc.Text;
+            baseDados.AlterarCliente(id,nome,nif,dataNasc);
+        }
     }
 }

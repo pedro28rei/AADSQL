@@ -55,11 +55,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.AltDataNasc = new System.Windows.Forms.TextBox();
+            this.AltNIF = new System.Windows.Forms.TextBox();
+            this.AltNome = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.AltID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridDados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -227,6 +227,7 @@
             this.AlterarCliente.TabIndex = 27;
             this.AlterarCliente.Text = "Alterar dados do cliente";
             this.AlterarCliente.UseVisualStyleBackColor = true;
+            this.AlterarCliente.Click += new System.EventHandler(this.AlterarCliente_Click);
             // 
             // label5
             // 
@@ -255,26 +256,26 @@
             this.label9.TabIndex = 31;
             this.label9.Text = "Nome";
             // 
-            // textBox1
+            // AltDataNasc
             // 
-            this.textBox1.Location = new System.Drawing.Point(748, 295);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(362, 26);
-            this.textBox1.TabIndex = 30;
+            this.AltDataNasc.Location = new System.Drawing.Point(748, 295);
+            this.AltDataNasc.Name = "AltDataNasc";
+            this.AltDataNasc.Size = new System.Drawing.Size(362, 26);
+            this.AltDataNasc.TabIndex = 30;
             // 
-            // textBox2
+            // AltNIF
             // 
-            this.textBox2.Location = new System.Drawing.Point(748, 245);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(362, 26);
-            this.textBox2.TabIndex = 29;
+            this.AltNIF.Location = new System.Drawing.Point(748, 245);
+            this.AltNIF.Name = "AltNIF";
+            this.AltNIF.Size = new System.Drawing.Size(362, 26);
+            this.AltNIF.TabIndex = 29;
             // 
-            // textBox3
+            // AltNome
             // 
-            this.textBox3.Location = new System.Drawing.Point(748, 192);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(362, 26);
-            this.textBox3.TabIndex = 28;
+            this.AltNome.Location = new System.Drawing.Point(748, 192);
+            this.AltNome.Name = "AltNome";
+            this.AltNome.Size = new System.Drawing.Size(362, 26);
+            this.AltNome.TabIndex = 28;
             // 
             // label10
             // 
@@ -285,12 +286,12 @@
             this.label10.TabIndex = 35;
             this.label10.Text = "ID";
             // 
-            // textBox4
+            // AltID
             // 
-            this.textBox4.Location = new System.Drawing.Point(748, 146);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(362, 26);
-            this.textBox4.TabIndex = 34;
+            this.AltID.Location = new System.Drawing.Point(748, 146);
+            this.AltID.Name = "AltID";
+            this.AltID.Size = new System.Drawing.Size(362, 26);
+            this.AltID.TabIndex = 34;
             // 
             // Interface
             // 
@@ -298,13 +299,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1166, 618);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.AltID);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.AltDataNasc);
+            this.Controls.Add(this.AltNIF);
+            this.Controls.Add(this.AltNome);
             this.Controls.Add(this.AlterarCliente);
             this.Controls.Add(this.MostrarNumContact);
             this.Controls.Add(this.label6);
@@ -355,11 +356,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox AltDataNasc;
+        private System.Windows.Forms.TextBox AltNIF;
+        private System.Windows.Forms.TextBox AltNome;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox AltID;
     }
 }
 
