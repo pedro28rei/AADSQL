@@ -36,32 +36,7 @@ namespace AADSQL
         }
 
 
-        /*
-         * Assim teriamos espaço para alterar dados
-         * Assim teriamos espaço para alterar dados
-         * Deveriamos remover este metodo, ja que temos adicionar cliente e contacto
-         * Deveriamos remover este metodo, ja que temos adicionar cliente e contacto
-         * Deveriamos remover este metodo, ja que temos adicionar cliente e contacto
-         * Deveriamos remover este metodo, ja que temos adicionar cliente e contacto
-         * Deveriamos remover este metodo, ja que temos adicionar cliente e contacto
-         * Deveriamos remover este metodo, ja que temos adicionar cliente e contacto
-         * Assim teriamos espaço para alterar dados
-         * Assim teriamos espaço para alterar dados
-         */
 
-
-        /// <summary>
-        /// Ao apertar no botao InserirDados, este envia o nome, nif e data que o user escreveu para o metodo InsereDadosCliente
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void InserirDadosButton_Click(object sender, EventArgs e)
-        {
-            string nome = Nome.Text;
-            string nif = NIFADD.Text;
-            string dataNasc = DataNasc.Text;
-            baseDados.InsereDadosCliente(nome,nif,dataNasc);
-        }
         /// <summary>
         /// Ao clicar no botão, mostra os dados da tabela escrita pelo user.
         /// </summary>
@@ -97,5 +72,6 @@ namespace AADSQL
             string descContacto = DescContacto.Text;
             baseDados.InsereDadosClienteContacto(nome,nif,dataNasc,tipoContacto,descContacto);
         }
+
     }
 }

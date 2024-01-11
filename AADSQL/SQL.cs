@@ -111,37 +111,6 @@ namespace AADSQL
 
 
         /// <summary>
-        /// Insere dados à tabela Cliente
-        /// </summary>
-        /// <param name="nome"></param>
-        /// <param name="nif"></param>
-        /// <param name="dataNasc"></param>
-        /// <returns></returns>
-        public bool InsereDadosCliente(string nome, string nif,string dataNasc)
-        {
-            string comando = string.Format("insert into Cliente(Cnome,CNIF,CDataNasc) values('{0}',{1},'{2}');",nome,nif,dataNasc);
-            using (SqlCommand checkCommand = new SqlCommand($"SELECT COUNT(*) FROM Cliente WHERE CNIF = {nif}", baseDeDados))
-            {
-                try
-                {
-                    int count = (int)checkCommand.ExecuteScalar();
-
-                    if (count == 0)
-                    {
-                        using (SqlCommand inserirDados = new SqlCommand(comando, baseDeDados))
-                        {
-                            inserirDados.ExecuteNonQuery();
-                        }
-                    }
-                    return true;
-                }
-                catch (SqlException)
-                {
-                }
-            }
-            return false;
-        }
-        /// <summary>
         /// Executa a stored procedure AdicionarClienteEContactos, recebendo como parametros o nome,nif,data de nascimento,tipo de contacto e descrição do contacto
         /// </summary>
         /// <param name="nome"></param>
