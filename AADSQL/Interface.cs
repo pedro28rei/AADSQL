@@ -73,6 +73,11 @@ namespace AADSQL
             baseDados.InsereDadosClienteContacto(nome,nif,dataNasc,tipoContacto,descContacto);
         }
 
+        /// <summary>
+        /// Quando aperta o botao de alterar dados do cliente, este recebe as strings escritas pelo utilizador e envia para o metodo AlterarDadosClienteContacto
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AlterarCliente_Click(object sender, EventArgs e)
         {
             string id = AltID.Text;
@@ -82,6 +87,11 @@ namespace AADSQL
             baseDados.AlterarCliente(id,nome,nif,dataNasc);
         }
 
+        /// <summary>
+        /// Quando aperta mostrar nº de contatctos por cliente , por cadada tipo de contacto, este recebe as strings escritas pelo utilizador e mostra os respetivos dados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MostrarNumContact_Click(object sender, EventArgs e)
         {
             DataGridDados.DataSource = null;
